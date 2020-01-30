@@ -3,5 +3,19 @@ package main
 import "fmt"
 
 func main() {
-  fmt.Printf("Hello\n")
+  type A struct {
+    name string
+    active bool
+  }
+
+  type B struct {
+    name string
+    active bool
+  }
+
+  var stefan A
+  var claudia B
+  claudia.name = "Claudia"
+  stefan = A(claudia)
+  fmt.Printf("%+v\n", stefan)
 }
